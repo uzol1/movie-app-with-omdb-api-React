@@ -2,13 +2,12 @@ import {
 
     Row,
     Col,
-    Card,
     Tag,
     Typography,
 } from 'antd';
 
 const MovieDetail = ({ Title, Poster, imdbRating, Rated, Runtime, Genre, Plot }) => {
-    const { Meta } = Card;
+
     const TextTitle = Typography.Title;
     return (
         <Row>

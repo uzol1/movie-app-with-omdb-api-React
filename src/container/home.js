@@ -16,14 +16,13 @@ const Home = (props) => {
     const { Header, Content, } = Layout;
     const [searchValue, setSearchValue] = useState(null);
     const [data, setData] = useState([])
-    const [loading, setLoading] = useState(true)
+
     const [error, setError] = useState('')
     const [visible, setVisible] = useState(false)
     const [detail, setDetail] = useState(false);
 
     useEffect(() => {
         axios.get(`http://www.omdbapi.com/?s=${searchValue ? searchValue : 'batman'}&apikey=3d018ec`).then(response => {
-            console.log(response.data.Search)
             setData(response.data.Search)
         }).catch(({ message }) => {
             setError(message);
