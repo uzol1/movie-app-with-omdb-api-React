@@ -22,7 +22,7 @@ const Home = (props) => {
     const [detail, setDetail] = useState(false);
 
     useEffect(() => {
-        axios.get(`http://www.omdbapi.com/?s=${searchValue ? searchValue : 'batman'}&apikey=3d018ec`).then(response => {
+        axios.get(`https://www.omdbapi.com/?s=${searchValue ? searchValue : 'batman'}&apikey=3d018ec`).then(response => {
             setData(response.data.Search)
         }).catch(({ message }) => {
             setError(message);
@@ -30,7 +30,7 @@ const Home = (props) => {
     }, [searchValue])
 
     const clickedHandler = (id) => {
-        axios.get(`http://www.omdbapi.com/?i=${id}&apikey=3d018ec`).then(response => {
+        axios.get(`https://www.omdbapi.com/?i=${id}&apikey=3d018ec`).then(response => {
             setDetail(response.data)
 
         })
